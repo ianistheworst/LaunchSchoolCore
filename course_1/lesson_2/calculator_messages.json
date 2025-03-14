@@ -1,0 +1,10 @@
+{
+    "en": {
+        "welcome": "Welcome to Mr. Calculator!",
+        "invalid_number": "Not a number, stupid!"
+    },
+    "el": {
+        "welcome": "Καλώς ήρθατε στον Mr. Calculator!",
+        "invalid_number": "Εκείνος δεν είναι έναν αριθμός"
+    }
+}

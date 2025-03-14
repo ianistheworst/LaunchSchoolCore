@@ -8,7 +8,13 @@ def prompt(message):
     print(f'==> {message}')
 def display_winner(player, computer):
     prompt(f'You have chosen {player}')
-    prompt(f'The computer cas chosen {computer}')
+    prompt(f'The computer has chosen {computer}')
+    # if player_wins(player, computer):
+    #     print('YOU WIN')
+    # elif player == computer:
+    #     print('It\'s a tie!!')
+    # else:
+    #     print('PC wins!!')
     if ((player == 'ROCK' and computer == ('SCISSORS' or 'LIZARD')) or
         (player == 'PAPER' and computer == ('ROCK' or 'SPOCK')) or
         (player == 'SCISSORS' and computer == ('PAPER' or 'LIZARD')) or
@@ -22,9 +28,17 @@ def display_winner(player, computer):
     else:
         prompt('You lose, you freaking loser. ')
         return "lose"
-
+# def player_wins(player_choice, computer_choice):
+#     return computer_choice in WINNING_COMBOS[player_choice]
 
 CHOICES = ['ROCK', 'PAPER', 'SCISSORS', 'LIZARD', 'SPOCK']
+# WINNING_COMBOS = {
+#     'ROCK': ['SCISSORS', 'LIZARD'],
+#     'PAPER': ['ROCK', 'SPOCK'],
+#     'SCISSORS': ['PAPER', 'LIZARD'],
+#     'LIZARD': ['PAPER', 'SPOCK'],
+#     'SPOCK': ['ROCK', 'SCISSORS']
+# }
 num_of_games = 0
 player_wins = 0
 computer_wins = 0
@@ -34,13 +48,10 @@ while num_of_games < 5:
     num_of_games += 1
     prompt('Welcome to the RPS Thunderdome! Play to Best of 5!')
     prompt("CHOOSE YOUR WARRIOR.")
-    #player_choice = input(f'1- {CHOICES[0]}, 2- {CHOICES[1]}, 3- {CHOICES[2]}\n')
     player_choice = input('--'.join(CHOICES) + '\n').upper()
-
-
     while player_choice not in CHOICES:
         print('Invalid input.')
-        player_choice = input('--'.join(CHOICES)+ '\n').upper()
+        player_choice = input('--'.join(CHOICES) + '\n').upper()
 
 
     pc_choice = random.choice(CHOICES)
